@@ -5,23 +5,23 @@ const port = 8001
 const app = express()
 
 app.get('/profile', (req, res) => {
-    res.json({
-        name: 'Marcos Plata',
-        age: 24,
-        country: 'Ecuador'
-    })
+    res.json([
+        {name: 'Marcos Plata'},
+        {age: 24},
+        {country: 'Ecuador'}
+    ])
 });
 
 app.post('/profile', (req, res) => {
     res.json([
-        'Digital House',
-        'Globant',
-        'Amazon'
+        {company: 'Digital House'},
+        {company:'Globant'},
+        {company: 'Amazon'}
     ])
 });
 
 app.patch('/profile', (req, res) => {
-    res.json([['Learn Programation'], ['Play soccer'], ['Listen to music']])
+    res.json([{1: 'Learn Programation'}, {2:'Play soccer'}, {3:'Listen to music'}])
 })
 
 app.listen(port, () => {
