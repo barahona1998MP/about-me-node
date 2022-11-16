@@ -20,8 +20,18 @@ app.post('/profile', (req, res) => {
     ])
 });
 
+
 app.patch('/profile', (req, res) => {
     res.json([{1: 'Learn Programation'}, {2:'Play soccer'}, {3:'Listen to music'}])
+})
+
+//? Petición -> request -> req
+//? respuesta  -> response -> res
+app.get('/text/:mensaje', (req, res) => {
+    const mensaje= req.params.mensaje
+    res.json({
+        message: `Este es el mensaje por parametro: ${mensaje}`
+    })
 })
 
 app.listen(port, () => {
